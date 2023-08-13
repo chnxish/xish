@@ -29,7 +29,7 @@ const Container = styled.div`
   color: ${({ theme }) => theme.palette.text.primary};
 `;
 
-const Markdown = ({ content, isDark }: MarkdownProps) => {
+const Markdown = ({ content }: MarkdownProps) => {
   const MarkdownComponents = {
     h1({ children, ...props }: HeadingProps) {
       return (

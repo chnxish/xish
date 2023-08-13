@@ -14,5 +14,4 @@ export type PostDataType = {
 
 export type MarkdownProps = {
   content: string;
-  isDark: boolean;
 };
