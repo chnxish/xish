@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Overview",
+    "path": "overview",
+    "hasChild": false,
+    "child": null
+  },
+  {
+    "title": "C++ Primer - Note",
+    "path": null,
+    "hasChild": true,
+    "child": [
+      {
+        "chapterTitle": "C++ Primer Chatper1",
+        "chapterPath": "cpp-primer-chapter1"
+      },
+      {
+        "chapterTitle": "C++ Primer Chatper2",
+        "chapterPath": "cpp-primer-chapter2"
+      }
+    ]
+  }
+]
