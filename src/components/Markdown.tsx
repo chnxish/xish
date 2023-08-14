@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import ReactMarkdown from 'react-markdown';
-import type { CodeProps, ComponentPropsWithoutRef, HeadingProps, ReactMarkdownProps } from 'react-markdown/lib/ast-to-react';
+import type { CodeProps, ComponentPropsWithoutRef, HeadingProps } from 'react-markdown/lib/ast-to-react';
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import bash from 'react-syntax-highlighter/dist/cjs/languages/prism/bash';
 import c from 'react-syntax-highlighter/dist/cjs/languages/prism/c';
@@ -25,7 +25,7 @@ SyntaxHighlighter.registerLanguage('markdown', markdown);
 SyntaxHighlighter.registerLanguage('python', python);
 SyntaxHighlighter.registerLanguage('typescript', typescript);
 
-const Container = styled.div`
+const StyledDiv = styled.div`
   color: ${({ theme }) => theme.palette.text.primary};
 `;
 
@@ -45,22 +45,26 @@ const Markdown = ({ content }: MarkdownProps) => {
         >{children}</h2>
       );
     },
-    p({ children, ...props }: ReactMarkdownProps) {
+    p({ children, ...props }: ComponentPropsWithoutRef<`p`>) {
       return (
         <p
           {...props}
         >{children}</p>
       );
     },
-    img({ src, ...props }: ComponentPropsWithoutRef<'img'>) {
+    img({ src, ...props }: ComponentPropsWithoutRef<`img`>) {
+      if (src == undefined) src = '';
       return (
+        // eslint-disable-next-line jsx-a11y/alt-text
         <img style={{ width: '50%' }} src={src} {...props} />
       );
     },
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     code({ node, inline, className, children, style, ...props }: CodeProps) {
       const match = /language-(\w+)/.exec(className || '');
       return !inline && match ? (
         <SyntaxHighlighter
+          // eslint-disable-next-line react/no-children-prop
           children={String(children).replace(/\n$/, '')}
           style={oneDark}
           language={match[1]}
@@ -76,13 +80,14 @@ const Markdown = ({ content }: MarkdownProps) => {
   };
 
   return (
-    <Container>
+    <StyledDiv>
       <ReactMarkdown
         components={MarkdownComponents}
-        children={content}
         remarkPlugins={[remarkGfm]}
-      />
-    </Container>
+      >
+        {content}
+      </ReactMarkdown>
+    </StyledDiv>
   );
 };
 

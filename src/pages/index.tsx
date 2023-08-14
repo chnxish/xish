@@ -265,7 +265,7 @@ export const getStaticProps: GetStaticProps = async () => {
       allPostsData,
     },
   };
-}
+};
 
 const Home = ({
   allPostsData
@@ -283,7 +283,7 @@ const Home = ({
         <HeroContainer>
           <HeroTextContainer>
             <Heading2>
-              Hey, I'm Xish!
+              Hey, I&apos;m Xish!
             </Heading2>
             <Text>
               Learn all computer technologies that I love.🌞 <br /><br />

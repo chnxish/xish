@@ -178,7 +178,7 @@ const Navbar = () => {
   const onThemeChange = (theme: ThemeTypes) => {
     localStorage.setItem('theme', theme);
     window.dispatchEvent(new Event('storage'));
-  }
+  };
 
   return (
     <Wrapper>
@@ -188,7 +188,7 @@ const Navbar = () => {
             <HideableStyledToggleButton
               value="check"
               selected={collapseState}
-              onChange={() => { toggleCollapse(!collapseState) }}
+              onChange={() => { toggleCollapse(!collapseState); }}
               sx={{
                 '&.MuiToggleButton-standard': { backgroundColor: isDark ? '#1a1d1e' : '#ffffff' },
                 '&:hover': { backgroundColor: isDark ? '#1a1d1e' : '#ffffff' },
