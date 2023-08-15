@@ -38,6 +38,7 @@ const Container = styled.div`
 `;
 
 const HeroContainer = styled(Container)`
+  margin-top: 2rem;
   flex-wrap: wrap;
   flex-direction: column;
 
@@ -52,7 +53,7 @@ const HeroTextContainer = styled.div`
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
-  padding: 0 3rem;
+  padding: 0 2rem;
   gap: 0.6rem;
 
   @media (min-width: 768px) {
@@ -63,7 +64,7 @@ const HeroTextContainer = styled.div`
 `;
 
 const Heading2 = styled.h2`
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: ${({ theme }) => theme.palette.text.primary};
 
@@ -73,7 +74,7 @@ const Heading2 = styled.h2`
 `;
 
 const Heading3 = styled.h3`
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: ${({ theme }) => theme.palette.text.primary};
 
@@ -84,7 +85,7 @@ const Heading3 = styled.h3`
 
 const Text = styled.p`
   max-width: 560px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: ${({ theme }) => theme.palette.text.primary};
 
   @media (min-width: 768px) {
@@ -123,7 +124,7 @@ const PostContainer = styled(Container)`
   justify-content: flex-start;
   flex-direction: column;
   min-height: 40vh;
-  padding: 1rem 3rem 3rem 3rem;
+  padding: 1rem 2rem 3rem 2rem;
 
   @media (min-width: 768px) {
     padding: 1rem 1.5rem 5rem 1.5rem;
@@ -156,7 +157,7 @@ const PostItem = styled(Link)`
 
 const PostName = styled.span`
   display: inline-block;
-  font-size: 1.2rem;
+  font-size: 1rem;
 
   @media (min-width: 768px) {
     font-size: 1.4rem;
@@ -169,7 +170,7 @@ const PostName = styled.span`
 
 const PostDate = styled.span`
   display: inline-block;
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: ${({ theme }) => theme.palette.mode ==='dark' ? '#787f85' : '#7e868c'};
 
   @media (min-width: 768px) {
@@ -239,7 +240,7 @@ const ProjectDate = styled.span`
 const ProjectName = styled.span`
   display: inline-block;
   padding: 0 0.6rem;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: ${({ theme }) => theme.palette.text.primary};
 
   @media (min-width: 768px) {
